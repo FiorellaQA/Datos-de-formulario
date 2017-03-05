@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form id="frm1" style="text-align: center">
+        <h2>Datos de Formulario</h2>
+            Nombre: <input type="text" name="name" id="name"><br><br>
+            Mail: <input type="email" name="email" id="email"><br><br>
+    </form> 
+    <div style="text-align: center;">
+        <button onclick="myFunction()">Mostrar</button>   
+    </div>
+    <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+        <div>
+            <h4 id="titulo"></h4>
+            <p id="mostrarNombre"></p>
+            <p id="mostrarMail"></p>
+        </div>
+    </div>
+  
+    <script>
+        function myFunction() {
+            var nombre = document.getElementById("name").value.trim();
+            var email = document.getElementById("email").value.trim();
+            if(nombre && email){
+                document.getElementById("titulo").innerHTML = "<br><center>Datos ingresados</center>"
+                document.getElementById("mostrarNombre").innerHTML = "Nombre: " + nombre;
+                document.getElementById("mostrarMail").innerHTML = "Email: " + email;
+                return false;
+            }else{
+                alert("Verifique que los campos estén correctamente llenos.")
+            }   
+        }
+    </script>
+</body>
+</html>
